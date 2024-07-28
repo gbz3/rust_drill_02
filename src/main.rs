@@ -7,8 +7,8 @@ struct Args {
     #[arg(short = 'n', help = "Do not print newline")]
     omit_newline: bool,
 
-    #[arg(value_name = "TEXT", required = true, help = "Input text")]
-    inputs: Vec<String>,
+    #[arg(value_name = "TEXT", help = "Input text")]
+    inputs: Option<Vec<String>>,
 
 }
 
