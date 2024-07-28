@@ -14,6 +14,16 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-
-    println!("{:#?}", args);
+    if args.inputs.is_some() {
+        let inputs = args.inputs.unwrap().join(" ");
+        if args.omit_newline {
+            print!("{}", inputs);
+        }
+        else {
+            println!("{}", inputs);
+        }
+    }
+    else if !args.omit_newline {
+        println!();
+    }
 }
